@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -46,7 +45,7 @@ def noteCreate(request):
     if serializer.is_valid():
         serializer.save()
     apiResponse = serializer.data
-    return jResponse(apiResponse)   
+    return Response(apiResponse)   
 
 
 #Update a Note
